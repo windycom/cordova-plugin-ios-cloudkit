@@ -1,0 +1,25 @@
+{
+  "name": "cordova-plugin-ios-cloudkit",
+  "version": "1.0.0",
+  "description": "Cordova Plugin iOS to use iCloud via CloudKit framework",
+  "cordova": {
+    "id": "cordova-plugin-ios-cloudkit",
+    "platforms": [
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/windycom/cordova-plugin-ios-cloudkit"
+  },
+  "keywords": [
+    "cordova",
+    "ecosystem:cordova",
+    "cordova-ios",
+    "cloudkit",
+    "icloud"
+  ],
+  "author": "Windyty, S.E.",
+  "license": "MIT",
+  "homepage": "https://github.com/windycom/cordova-plugin-ios-cloudkit"
+}

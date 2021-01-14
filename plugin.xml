@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin id="cordova-plugin-ios-cloudkit" version="0.1.0" xmlns="http://apache.org/cordova/ns/plugins/1.0">
+  <name>cordova-plugin-cloudKit</name>
+  <js-module name="cloudKit" src="www/cloudKit.js">
+    <clobbers target="cordova.plugins.cloudKit" />
+  </js-module>
+  <platform name="ios">
+    <config-file parent="/*" target="config.xml">
+      <feature name="cloudKit">
+        <param name="ios-package" value="cloudKitPlugin" />
+      </feature>
+    </config-file>
+    <source-file src="src/ios/cloudKitPlugin.swift" />
+    <dependency id="cordova-plugin-add-swift-support" />
+  </platform>
+</plugin>
