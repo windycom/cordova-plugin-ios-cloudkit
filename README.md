@@ -13,11 +13,11 @@ To make plugin work, some knowledge of `xcode` is required.
 Install your cordova plugins
 
 ```sh
-    # Although this plugin should be installed autimatically
-    # as dependency its installation sometimes fail
-    cordova plugin add cordova-plugin-add-swift-support
+# Although this plugin should be installed automatically
+# as dependency its installation sometimes fail
+cordova plugin add cordova-plugin-add-swift-support
 
-    cordova plugin add cordova-plugin-ios-cloudkit
+cordova plugin add cordova-plugin-ios-cloudkit
 ```
 
 Make sure you properly set your iCloud database in xcode for development as described [here](https://developer.apple.com/documentation/coredata/mirroring_a_core_data_store_with_cloudkit/setting_up_core_data_with_cloudkit)
@@ -29,36 +29,36 @@ Then monitor correct functionality of the plugin in [Apple iCloud dashboard](htt
 Plugin can be found at `cordova.plugins.cloudKit` and can be used after `deviceReady` event.
 
 ```js
-    // Just shortcut
-    const cloudKit = cordova.plugins.cloudKit;
+// Just shortcut
+const cloudKit = cordova.plugins.cloudKit;
 
-    // Initializes cloud credentials
-    cloudKit.init(
-        "iCloud.com.name.of.your.container", // Cloud ID
-        "keyValueStore" // Record type. Just any string to identify stored data
-    );
+// Initializes cloud credentials
+cloudKit.init(
+    "iCloud.com.name.of.your.container", // Cloud ID
+    "keyValueStore" // Record type. Just any string to identify stored data
+);
 
-    // Inserts / updates key-value pair to iCloud
-    cloudKit.set(
-        "Hello", // key
-        "World", // value (any string), use JSON.stringyfy to store complex obejcts
-        succ => { /* Succcess */ },
-        err => { console.error(err) }
-    );
+// Inserts / updates key-value pair to iCloud
+cloudKit.set(
+    "Hello", // key
+    "World", // value (any string), use JSON.stringyfy to store complex obejcts
+    succ => { /* Succcess */ },
+    err => { console.error(err) }
+);
 
-    // Retrives value
-    cloudKit.get(
-        "Hello", // key
-        val => { console.log(val) }, // Always String. USe JSON.parse to parse stringified objects
-        err => { console.error(err) }
-    );
+// Retrives value
+cloudKit.get(
+    "Hello", // key
+    val => { console.log(val) }, // Always String. USe JSON.parse to parse stringified objects
+    err => { console.error(err) }
+);
 
-    // Deletes a record
-    cloudKit.delete(
-        "Hello", // key
-        succ => { /* Succcess */ },
-        err => { console.error(err) }
-    );
+// Deletes a record
+cloudKit.delete(
+    "Hello", // key
+    succ => { /* Succcess */ },
+    err => { console.error(err) }
+);
 
 ```
 
